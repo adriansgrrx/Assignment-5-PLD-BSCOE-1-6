@@ -23,7 +23,24 @@
 
 # Steps
 # 1. Ask for the grade percentage
-grades = float(input("\nPlease enter your grade percentage: "))
+
+#Validation
+while True:
+    try:
+        grades = float(input("\nPlease enter your grade percentage: "))
+    except ValueError:
+        print("\nSorry, you've entered invalid characters. Please try again.")
+        continue
+    if grades < 65:
+        print("\nSorry, please enter a grade percentage ranging from 65-100. Thank you.\n")
+    else:
+        break
+    
+if grades > 100:
+    print("\nSorry, please enter a grade percentage ranging from 65-100. Thank you.\n")
+else:
+    print("\nBase on the grading system, here's your grade evaluation...")
+
 # 2. Display the equivalent Grade/Mark and display the description
 
     if grades >= 97 and grades <= 100:
