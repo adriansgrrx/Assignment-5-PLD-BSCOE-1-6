@@ -26,7 +26,15 @@ if first_number < second_number and first_number < third_number :
     #Variable for the first number if it is the smallest
     smallest_num = first_number
 # 6. else statement for the second input.
+else:
     # present an inequality
+    if second_number < third_number:
+        smallest_num = second_number
 # 7. else statement for the third input.
+    else:
         #proceeding to the last variable for the third number if it is the smallest.
+        smallest_num = third_number
+
 #  8. Display
+print(f"\nAmong the numbers you've entered, {smallest_num} is the smallest number!\n")
+
