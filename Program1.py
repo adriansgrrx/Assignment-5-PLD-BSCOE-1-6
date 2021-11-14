@@ -25,7 +25,7 @@
 # 1. Ask for the grade percentage
 #Def function to ask fo the grade percentage
 def inpt_grades():
-    prcntg_grade =(input("\nPlease input your Grade/Mark: "))
+    prcntg_grade =(input("\nPlease enter your Grade/Mark: "))
     return prcntg_grade
 #Call the function
 grades = inpt_grades()
@@ -33,6 +33,7 @@ grades = inpt_grades()
 
 # if and else statement section including the input process 
 if grades.replace(".","",1).isdigit() == True:
+#round-off plus float, in-case the grades are in decimal form. The command will round-off to the highest term.
     final_mark = round(float(grades))
 # 2. Display the equivalent Grade/Mark and display the description
     if final_mark < 65:
@@ -94,4 +95,4 @@ else:
             if nonnummerical_mark == "D" or nonnummerical_mark == "d":
                 print(f"\nYour input: {nonnummerical_mark}\nDescription: Dropped\n")
             else:
-                print(f"\n[NOT FOUND] {nonnummerical_mark} is not included in the system.\n")                                                 
+                print(f"\n[NOT FOUND] {nonnummerical_mark} is not included in the system.\n")
