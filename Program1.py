@@ -23,76 +23,75 @@
 
 # Steps
 # 1. Ask for the grade percentage
+#Def function to ask fo the grade percentage
+def inpt_grades():
+    prcntg_grade =(input("\nPlease enter your grade percentage: "))
+    return prcntg_grade
+#Call the function
+grades = inpt_grades()
 
-#Validation
-while True:
-    try:
-        grades = float(input("\nPlease enter your grade percentage: "))
-    except ValueError:
-        print("\nSorry, you've entered invalid characters. Please try again.")
-        continue
-    if grades < 65:
-        print("\nSorry, please enter a grade percentage ranging from 65-100. Thank you.\n")
-    else:
-        break
-    
-if grades > 100:
-    print("\nSorry, please enter a grade percentage ranging from 65-100. Thank you.\n")
-else:
-    print("\nBase on the grading system, here's your grade evaluation...")
-
+# if and else statement section including the input process 
+if grades.replace(".","",1).isdigit() == True:
+    final_mark = round(float(grades))
 # 2. Display the equivalent Grade/Mark and display the description
-
-    if grades >= 97 and grades <= 100:
-    #Display the equivalent Description
-        print(f"\nGrade percentage: {grades}%\nEquivalent: 1.00\nDescription: Excellent\n")
+    if final_mark < 65:
+        print(f"Grade percentage: {final_mark}% \nDescription: [NOT FOUND] Your input grade percentage could be; Incomplete[Inc.], Withrawn[W] or Dropped[D].\n")
     else:
-        if grades >= 94 and grades <= 96:
-            #Display the equivalent Description
-            print(f"\nGrade percentage: {grades}%\nEquivalent: 1.25\nDescription: Excellent\n")
+        pass
+        if final_mark > 100:
+            print("\nSorry, please enter a grade percentage ranging from 65-100. Thank you.\n")
         else:
-            if grades >= 91 and grades <= 93 or grades >= 88 and grades <= 90:
+            print("\nBase on the grading system, here's your grade evaluation...")            
+            if final_mark >= 97 and final_mark <= 100:
                 #Display the equivalent Description
-                print(f"\nGrade percentage: {grades}%\nEquivalent: 1.5\nDescription: Very Good\n")
+                print(f"\nGrade percentage: {final_mark}%\nEquivalent: 1.00\nDescription: Excellent\n")
             else:
-                if grades >= 88 and grades <= 90:
+                if final_mark >= 94 and final_mark <= 96:
                     #Display the equivalent Description
-                    print(f"\nGrade percentage: {grades}%\nEquivalent: 1.75 \nDescription: Very Good\n")
+                    print(f"\nGrade percentage: {final_mark}%\nEquivalent: 1.25\nDescription: Excellent\n")
                 else:
-                    if grades >= 85 and grades <= 87:
+                    if final_mark >= 91 and final_mark <= 93:
                         #Display the equivalent Description
-                        print(f"\nGrade percentage: {grades}%\nEquivalent: 2.00 \nDescription: Good\n")
+                        print(f"\nGrade percentage: {grades}%\nEquivalent: 1.5\nDescription: Very Good\n")
                     else:
-                        if grades >= 82 and grades <= 84:
+                        if final_mark >= 88 and final_mark <= 90:
                             #Display the equivalent Description
-                            print(f"\nGrade percentage: {grades}%\nEquivalent: 2.25 \nDescription: Good\n")
+                            print(f"\nGrade percentage: {final_mark}%\nEquivalent: 1.75 \nDescription: Very Good\n")
                         else:
-                            if grades >= 79 and grades <= 81:
+                            if final_mark >= 85 and final_mark <= 87:
                                 #Display the equivalent Description
-                                print(f"\nGrade percentage: {grades}%\nEquivalent: 2.50 \nDescription: Satisfactory\n")
+                                print(f"\nGrade percentage: {final_mark}%\nEquivalent: 2.00 \nDescription: Good\n")
                             else:
-                                if grades >= 76 and grades <= 78:
-                                #Display the equivalent Description
-                                    print(f"\nGrade percentage: {grades}%\nEquivalent: 2.75 \nDescription: Satisfactory\n")   
-                                else:
-                                    if grades == 75:
+                                if final_mark >= 82 and final_mark <= 84:
                                     #Display the equivalent Description
-                                        print(f"\nGrade percentage: {grades}%\nEquivalent: 3.00 \nDescription: Passing\n")
-                                    else:
-                                        if grades >= 65 and grades <= 74:
+                                    print(f"\nGrade percentage: {final_mark}%\nEquivalent: 2.25 \nDescription: Good\n")
+                                else:
+                                    if final_mark >= 79 and final_mark <= 81:
                                         #Display the equivalent Description
-                                            print(f"\nGrade percentage: {grades}%\nEquivalent: 5.00 \nDescription: Failure\n")
-                                        else:
-                                            if grades == INC:
+                                        print(f"\nGrade percentage: {final_mark}%\nEquivalent: 2.50 \nDescription: Satisfactory\n")
+                                    else:
+                                        if final_mark >= 76 and final_mark <= 78:
                                             #Display the equivalent Description
-                                                print(f"\nGrade percentage: {grades}%\nDescription: Incomplete\n")
-                                            else:
-                                                if grades == W:
+                                            print(f"\nGrade percentage: {final_mark}%\nEquivalent: 2.75 \nDescription: Satisfactory\n")   
+                                        else:
+                                            if final_mark == 75:
                                                 #Display the equivalent Description
-                                                    print(f"\nGrade percentage: {grades}%\nDescription: Withrawn\n")
+                                                print(f"\nGrade percentage: {final_mark}%\nEquivalent: 3.00 \nDescription: Passing\n")
+                                            else:
+                                                if final_mark >= 65 and final_mark <= 74:
+                                                #Display the equivalent Description
+                                                    print(f"\nGrade percentage: {final_mark}%\nEquivalent: 5.00 \nDescription: Failure\n")
                                                 else:
-                                                    if grades == D:
-                                                    #Display the equivalent Description
-                                                        print(f"\nGrade percentage: {grades}%\nDescription: Dropped\n")
-
-    print ("Congratulations! You did great!\n")                                                                          
+                                                    unnummerical_input = grades
+                                                    if grades == "Inc." or grades == "inc." or grades == "INC.":
+                                                        #Display the equivalent Description
+                                                        print(f"\nGrade percentage: {unnumerical_input}%\nDescription: Incomplete\n")
+                                                    else:
+                                                        if grades == "W" or grades == "w":
+                                                            #Display the equivalent Description
+                                                            print(f"\nGrade percentage: {grades}%\nDescription: Withrawn\n")
+                                                        else:
+                                                            if grades == "D" or grades == "d":
+                                                                #Display the equivalent Description
+                                                                print(f"\nGrade percentage: {grades}%\nDescription: Dropped\n")
+                                                            
