@@ -6,7 +6,7 @@
 #Welcome statement
 print("\nHey there!, please enter a number of your choice!")
 
-# **********PROGRAM FLOW*****************
+# **********PROGRAM FLOW***************
 # 1. Ask for the first number.
 first_number = int(input("\nEnter your first number: "))
 
@@ -37,4 +37,3 @@ else:
 
 #  8. Display
 print(f"\nAmong the numbers you've entered, {smallest_num} is the smallest number!\n")
-
