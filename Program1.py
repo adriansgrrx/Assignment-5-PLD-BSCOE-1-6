@@ -25,17 +25,18 @@
 # 1. Ask for the grade percentage
 #Def function to ask fo the grade percentage
 def inpt_grades():
-    prcntg_grade =(input("\nPlease enter your grade percentage: "))
+    prcntg_grade =(input("\nPlease input your Grade/Mark: "))
     return prcntg_grade
 #Call the function
 grades = inpt_grades()
+
 
 # if and else statement section including the input process 
 if grades.replace(".","",1).isdigit() == True:
     final_mark = round(float(grades))
 # 2. Display the equivalent Grade/Mark and display the description
     if final_mark < 65:
-        print(f"Grade percentage: {final_mark}% \nDescription: [NOT FOUND] Your input grade percentage could be; Incomplete[Inc.], Withrawn[W] or Dropped[D].\n")
+        print(f"\nGrade percentage: {final_mark}% \nDescription: [NOT FOUND] Your input grade percentage could be; Incomplete[Inc.], Withrawn[W] or Dropped[D].\n")
     else:
         pass
         if final_mark > 100:
@@ -81,17 +82,16 @@ if grades.replace(".","",1).isdigit() == True:
                                                 if final_mark >= 65 and final_mark <= 74:
                                                 #Display the equivalent Description
                                                     print(f"\nGrade percentage: {final_mark}%\nEquivalent: 5.00 \nDescription: Failure\n")
-                                                else:
-                                                    unnummerical_input = grades
-                                                    if grades == "Inc." or grades == "inc." or grades == "INC.":
-                                                        #Display the equivalent Description
-                                                        print(f"\nGrade percentage: {unnumerical_input}%\nDescription: Incomplete\n")
-                                                    else:
-                                                        if grades == "W" or grades == "w":
-                                                            #Display the equivalent Description
-                                                            print(f"\nGrade percentage: {grades}%\nDescription: Withrawn\n")
-                                                        else:
-                                                            if grades == "D" or grades == "d":
-                                                                #Display the equivalent Description
-                                                                print(f"\nGrade percentage: {grades}%\nDescription: Dropped\n")
-                                                            
+#non-nummerical input section of if else statements
+else:                               
+    nonnummerical_mark = grades
+    if nonnummerical_mark == "INC." or nonnummerical_mark == "Inc." or nonnummerical_mark == "inc." or nonnummerical_mark == "inc":
+        print(f"\nYour input: {nonnummerical_mark}\nDescription: Incomplete\n")
+    else: 
+        if nonnummerical_mark == "W" or nonnummerical_mark == "w": 
+            print(f"\nYour input: {nonnummerical_mark}\nDescription: Withdrawn\n")
+        else: 
+            if nonnummerical_mark == "D" or nonnummerical_mark == "d":
+                print(f"\nYour input: {nonnummerical_mark}\nDescription: Dropped\n")
+            else:
+                print(f"\n[NOT FOUND] {nonnummerical_mark} is not included in the system.\n")                                                 
